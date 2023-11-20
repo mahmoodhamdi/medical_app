@@ -5,6 +5,7 @@ import 'package:medical_app/features/on_boarding/onboarding_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
+    final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBoardingScreen:
         // The initial route for your app
@@ -17,7 +18,8 @@ class AppRouter {
         // If the route is not defined, you can navigate to an error page
         return MaterialPageRoute(
             builder: (_) => Scaffold(
-                  body: Text("No defined route for : ${settings.name}"),
+                  body: Center(
+                      child: Text("No defined route for : ${settings.name}")),
                 ));
     }
   }
